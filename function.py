@@ -20,3 +20,7 @@ def square_area(a):
   
 print (circle_area(2.8))
 print (square_area(4))
+
+#https://www.python-course.eu/python3_variables.php
+#https://www.python-course.eu/python3_list_manipulation.php
+#https://www.python-course.eu/python3_functions.php
