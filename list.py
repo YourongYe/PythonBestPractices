@@ -21,7 +21,7 @@ print(e)
 f = [1,2,5,2,6,2,7]
 # C++
 # for(int i=0; i<f.size(); i++){
-#    std::cout<<f[i]<<std::endl;  
+#    std::cout<<f[i]*2<<std::endl;  
 # }
 for x in f:
-  print(x)
+  print(x*2)
