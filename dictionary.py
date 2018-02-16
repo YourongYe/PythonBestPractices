@@ -1,13 +1,4 @@
-d = {}
-d[12345] = "yoyo"
-d[242] = "mincong"
-d[33] = "someone"
 
-print(d)
-
-num = 242
-if num in d:
-  print(d[242])
   
 d = {1:"people1",2:"people2"}
 d[12345] = "yoyo"
