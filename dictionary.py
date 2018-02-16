@@ -1,4 +1,4 @@
-
+#dictionary 相当于C++中的map，有对应关系的数据结构，key和value
   
 d = {1:"people1",2:"people2"}
 d[12345] = "yoyo"
@@ -15,6 +15,7 @@ num = 242
 if num in d:
   print(d[num])
   
+#str(random_num)是为了和后面的string统一
   
 random_num = 1111111111
 if random_num not in d:
