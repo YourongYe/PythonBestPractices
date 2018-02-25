@@ -37,7 +37,7 @@ class StudentInfo:
   
 #a = StudentInfo()
 #a.name = "mincong"
-#a.address = "N1 6LW"
+#a.address = "N7 6ET"
 #a.phone = 2123
 #a.score = 100
 
