@@ -8,7 +8,7 @@
 # };
 
 #####################################################################
-# Basic class
+# 1. Basic class
 #####################################################################
 
 class StudentInfo:
@@ -28,7 +28,7 @@ print(a.address)
 print(a.phone) 
 
 #####################################################################
-# Class with __init__ member function
+# 2. Class with __init__ member function
 #####################################################################
 
 class StudentInfo:
@@ -56,7 +56,7 @@ print(b.address)
 print(b.phone)
 
 #####################################################################
-# Class with "changeAddress" member function
+# 3. Class with "changeAddress" member function
 #####################################################################
 
 class StudentInfo:
