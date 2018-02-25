@@ -56,7 +56,7 @@ print(b.address)
 print(b.phone)
 
 #####################################################################
-# 3. Class with "changeAddress" member function
+# 3. Class with "changeAddress" and "deduceScore" member function
 #####################################################################
 
 class StudentInfo:
