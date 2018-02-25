@@ -59,7 +59,7 @@ print(b.phone)
 # 3. Class with "changeAddress" and "deduceScore" member function
 #####################################################################
 
-class StudentInfo:
+class StudentInfo: #以下四个都是member variables
   name = ""
   address = ""
   phone = 0
