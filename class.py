@@ -59,14 +59,17 @@ print(b.phone)
 # 3. Class with "changeAddress" and "deduceScore" member function
 #####################################################################
 
-class StudentInfo: #以下四个都是member variables
+class StudentInfo: 
+  #以下四个都是member variables
   name = ""
   address = ""
   phone = 0
   score = 0
 
-  def __init__(self, in_name, in_address, in_phone, in_score): #__init__是属于class的特殊函数（前后有两条下划线），用来初始化class的
-    self.name = in_name     # 这是属于class的member function
+  #__init__是属于class的特殊函数（前后有两条下划线），用来初始化class的
+  # 这是属于class的member function
+  def __init__(self, in_name, in_address, in_phone, in_score): 
+    self.name = in_name     
     self.address = in_address
     self.phone = in_phone
     self.score = in_score
@@ -96,8 +99,10 @@ class StudentInfo:
   phone = 0
   scores = {}
 
-  def __init__(self, in_name, in_address, in_phone): #__init__是属于class的特殊函数（前后有两条下划线），用来初始化class的
-    self.name = in_name     # 这是属于class的member function
+  #__init__是属于class的特殊函数（前后有两条下划线），用来初始化class的
+  # 这是属于class的member function
+  def __init__(self, in_name, in_address, in_phone): 
+    self.name = in_name     
     self.address = in_address
     self.phone = in_phone
     
