@@ -73,9 +73,15 @@ class StudentInfo:
     
   def changeAddress(self, new_address):
     self.address = new_address
+  
+  def deduceScore(self, num):
+    self.score -= num
 
 b = StudentInfo("yourong","SW1", 123, 100)
 
 print(b.address)
 b.changeAddress("N1")
 print(b.address)
+print(b.score)
+b.deduceScore(10)
+print(b.score)
