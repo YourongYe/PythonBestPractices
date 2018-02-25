@@ -64,9 +64,9 @@ class StudentInfo:
   address = ""
   phone = 0
   score = 0
-  
-  def __init__(self, in_name, in_address, in_phone, in_score):
-    self.name = in_name
+
+  def __init__(self, in_name, in_address, in_phone, in_score): #__init__是属于class的特殊函数（前后有两条下划线），用来初始化class的
+    self.name = in_name     # 这是属于class的member function
     self.address = in_address
     self.phone = in_phone
     self.score = in_score
