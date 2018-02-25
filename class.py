@@ -87,7 +87,7 @@ b.deduceScore(10)
 print(b.score)
 
 #####################################################################
-# 4. Class with multiple scores member, storing in dictionary
+# 4. Class with multiple scores member variables, storing in dictionary
 #####################################################################
 
 class StudentInfo:
