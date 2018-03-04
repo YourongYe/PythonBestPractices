@@ -121,3 +121,17 @@ print(b.address)
 print(b.scores)
 b.setScore("Math", 100)
 print(b.scores)
+
+#####################################################################
+# 5. Class to calculate average scores
+#####################################################################
+d = {}
+d["mincong"] = 90
+d["yoyo"] = 100
+
+sum = 0
+for x in d:
+  sum += d[x]
+  
+avg = sum/len(d)
+print(avg)
