@@ -133,5 +133,5 @@ sum = 0
 for x in d:
   sum += d[x]
   
-avg = sum/len(d)
+avg = sum/len(d) #"len"是length，同size
 print(avg)
