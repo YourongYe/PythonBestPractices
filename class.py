@@ -135,3 +135,24 @@ for x in d:
   
 avg = sum/len(d) #"len"是length，同size
 print(avg)
+
+############# 6. Practice
+class StudentInfo:
+  name = ""
+  address = ""
+  phone = 0
+  scores = {}
+  
+  def setScore(self, course, score):
+    self.scores[course]=score
+    
+  def average(self):
+    sum=0
+    for x in self.scores:
+      sum += self.scores[x]
+    return sum/len(self.scores)
+
+b=StudentInfo()
+b.setScore("Math",100)
+b.setScore("English",90)
+print (b.average())
