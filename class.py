@@ -123,8 +123,9 @@ b.setScore("Math", 100)
 print(b.scores)
 
 #####################################################################
-# 5. Class to calculate average scores
+# 5. Method to calculate average score for a student
 #####################################################################
+############# Dictionary
 d = {}
 d["mincong"] = 90
 d["yoyo"] = 100
@@ -136,7 +137,7 @@ for x in d:
 avg = sum/len(d) #"len"是length，同size
 print(avg)
 
-############# 6. Practice
+############# Practice
 class StudentInfo:
   name = ""
   address = ""
@@ -156,3 +157,56 @@ b=StudentInfo()
 b.setScore("Math",100)
 b.setScore("English",90)
 print (b.average())
+
+#####################################################################
+# 6. Inherit
+#####################################################################
+# If we want to add teacher info, teacher and student can the same
+# parameters (name, address, phone), and we don't want to duplicate them
+# So we can have a base class storing the abstracted data (name,address,phone)
+
+class Info:
+  name = ""
+  address = ""
+  phone = 0
+  
+  def __init__(self,n):
+    self.name = n
+  
+# inherit from Info class
+class StudentInfo(Info):
+  scores = {}
+  
+  def __init__(self,n):
+    super().__init__(n)
+  
+  def setScore(self, course, score):
+    self.scores[course]=score
+    
+  def average(self):
+    total_score=0
+    for x in self.scores:
+      total_score += self.scores[x]
+    return total_score/len(self.scores)
+
+# inherit from Info class
+class TeacherInfo(Info):
+  salary = 0
+
+  def __init__(self,n):
+    super().__init__(n)
+    
+  def setSalary(self,s):
+    self.salary = s
+
+  def getSalary(self):
+    return self.salary
+
+b=StudentInfo("student1")
+b.setScore("Math",100)
+b.setScore("English",90)
+print (b.name +" has avg score: "+ str(b.average()))
+
+t = TeacherInfo("teacher1")
+t.setSalary(2000)
+print(t.name + " has salary: "+str(t.getSalary()))
