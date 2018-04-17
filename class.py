@@ -172,8 +172,10 @@ class Info:
   
   def __init__(self,n):
     self.name = n
+    
+  def getName(self):
+    return self.name
   
-# inherit from Info class
 class StudentInfo(Info):
   scores = {}
   
@@ -189,7 +191,6 @@ class StudentInfo(Info):
       total_score += self.scores[x]
     return total_score/len(self.scores)
 
-# inherit from Info class
 class TeacherInfo(Info):
   salary = 0
 
@@ -210,3 +211,8 @@ print (b.name +" has avg score: "+ str(b.average()))
 t = TeacherInfo("teacher1")
 t.setSalary(2000)
 print(t.name + " has salary: "+str(t.getSalary()))
+
+print("\nPrinting all people name")
+people = [b,t]
+for i in people:
+  print(i.getName())
