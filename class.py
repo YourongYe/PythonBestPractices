@@ -18,7 +18,7 @@ class StudentInfo:
   score = 0
   
 a = StudentInfo()
-a.name = "mincong"
+a.name = "min"
 a.address = "N1"
 a.phone = 2123
 a.score = 100
@@ -44,7 +44,7 @@ class StudentInfo:
     self.score = in_score
   
 #a = StudentInfo()
-#a.name = "mincong"
+#a.name = "min"
 #a.address = "N7"
 #a.phone = 2123
 #a.score = 100
@@ -127,7 +127,7 @@ print(b.scores)
 #####################################################################
 ############# Dictionary
 d = {}
-d["mincong"] = 90
+d["min"] = 90
 d["yoyo"] = 100
 
 sum = 0
