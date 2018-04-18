@@ -1,18 +1,19 @@
 # LIST
 
-a = 2
-b = 3.5
-c = a*b
-print (c)
-
 a = [1,2,3,4,5,6] #list,相当于C++里的vector
 print (a)
 
-b = []
+b = [0,1,2,3]
 b.append(2)
 b.append(3)
 b.append(4)
 print (b)
+b.pop(0)#剔除第0个数
+print (b)
+b.pop()#剔除最上面的一个
+print(b)
+b.extend(a)#在上面加一个list的内容用extend
+print(b)
 
 c = list(range(1,10)) #初始化list
 print (c)
