@@ -2,7 +2,7 @@
   
 d = {1:"people1",2:"people2"}
 d[12345] = "yoyo"
-d[242] = "mincong"
+d[242] = "yoyo2"
 d[33] = "someone"
 
 print(d)
