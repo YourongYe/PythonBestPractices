@@ -37,6 +37,7 @@ class StudentInfo:
   phone = 0
   score = 0
   
+  #__init__(self..是member function的固定格式，注意init两边的下划线是两条连着的。括号里的相当于是input，function中相当于要让class里的值和input值一一对应
   def __init__(self, in_name, in_address, in_phone, in_score):
     self.name = in_name
     self.address = in_address
