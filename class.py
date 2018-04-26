@@ -147,7 +147,11 @@ class StudentInfo:
   
   def setScore(self, course, score):
     self.scores[course]=score
-    
+  
+  #区分self.scores, self.scores[], b.average(). 带括号是调用function，不带括号是调用它的variable
+  #带括号的表示, 调用getAverage()function, 然后那个function return的东西就会被print出来
+  #不带括号, 表示print它的getAverage变量, 然后它发现没有变量, 就给你print一些乱七八糟的东西了
+  
   def average(self):
     sum=0
     for x in self.scores:
