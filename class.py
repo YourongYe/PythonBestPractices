@@ -181,11 +181,13 @@ class Info:
   def getName(self):
     return self.name
   
-#此处Info是父类，StudentInfo是子类
+#类的继承:此处Info是父类，StudentInfo是子类
 class StudentInfo(Info):
   scores = {}
   
+  #在类的继承中，如果重定义某个方法，该方法会覆盖父类的同名方法，但有时，我们希望能同时实现父类的功能，这时，我们就需要调用父类的方法了，可通过使用 super 来实现
   #super 的一个最常见用法可以说是在子类中调用父类的初始化方法了,Python3 可使用 super().__init__(a, b)
+  #最原始的写法是：super(StudentInfo, self).__init__(a, b)，下面是简化的写法，并不是没有调用self，而是省略了
   def __init__(self,n):
     super().__init__(n)
   
