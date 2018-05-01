@@ -181,7 +181,7 @@ class Info:
   def getName(self):
     return self.name
   
-#类的继承:此处Info是父类，StudentInfo是子类
+#类的继承:此处Info是父类(base class/parent class)，StudentInfo是子类(derive class/child class)
 class StudentInfo(Info):
   scores = {}
   
