@@ -170,6 +170,8 @@ print (b.average())
 # parameters (name, address, phone), and we don't want to duplicate them
 # So we can have a base class storing the abstracted data (name,address,phone)
 
+
+#继承的好处：避免重复，有一定的逻辑联系才可以用继承
 class Info:
   name = ""
   address = ""
