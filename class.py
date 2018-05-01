@@ -231,7 +231,10 @@ for i in people:
 #####################################################################
 # 7. Encapsulation
 #####################################################################
-
+#class has private，public and protected，the above is public because it can be accessed outside the class
+#private: 1. can be accessed and modified within the class. eg. member function 2. there are other ways, not mentioned here.
+#private:是在member variable前面加两个下划线，这样这个member variable就不能被访问或者被修改
+#注意：__init__ 是前后都有两个下划线，叫magic function（method），是python里面特有的特殊的function
 
 
 
