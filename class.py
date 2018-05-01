@@ -166,7 +166,7 @@ print (b.average())
 #####################################################################
 # 6. Inherit
 #####################################################################
-# If we want to add teacher info, teacher and student can the same
+# If we want to add teacher info, teacher and student can be the same
 # parameters (name, address, phone), and we don't want to duplicate them
 # So we can have a base class storing the abstracted data (name,address,phone)
 
@@ -184,6 +184,7 @@ class Info:
 class StudentInfo(Info):
   scores = {}
   
+  #super 的一个最常见用法可以说是在子类中调用父类的初始化方法了
   def __init__(self,n):
     super().__init__(n)
   
