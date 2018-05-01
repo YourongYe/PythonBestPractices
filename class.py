@@ -181,6 +181,7 @@ class Info:
   def getName(self):
     return self.name
   
+#此处Info是父类，StudentInfo是子类
 class StudentInfo(Info):
   scores = {}
   
