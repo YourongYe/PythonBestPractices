@@ -184,7 +184,7 @@ class Info:
 class StudentInfo(Info):
   scores = {}
   
-  #super 的一个最常见用法可以说是在子类中调用父类的初始化方法了
+  #super 的一个最常见用法可以说是在子类中调用父类的初始化方法了,Python3 可使用 super().__init__(a, b)
   def __init__(self,n):
     super().__init__(n)
   
