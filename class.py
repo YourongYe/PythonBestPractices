@@ -236,6 +236,81 @@ for i in people:
 #private:是在member variable前面加两个下划线，这样这个member variable就不能被访问或者被修改
 #注意：__init__ 是前后都有两个下划线，叫magic function（method），是python里面特有的特殊的function
 
+#下面print不出来：
+class Info:
+  __name = ""
+  __address = ""
+  __phone = 0
+  
+  def __init__(self, n, a, p):
+    self.__name = n
+    self.__address = a 
+    self.__phone = p 
+    
+    
+class StudentInfo(Info):
+  __major = ""
+  __score = {}
+  
+  def __init__(self, n, a, p, m):
+    super().__init__(n, a, p)
+    self.__major = m
+  
+  def setScore(self, course, __score):
+    self.__score[course] = __score
 
+  
+class teacherInfo(Info):
+  salary = 0
+  
+  def __init__(self, n, a, p, s):
+    super().__init__(n, a, p)
+    self.salary = s
+    
+print (a.__name,  a.__phone, a.__major)
+
+#可以print出来的方法：
+class Info:
+  __name = ""
+  __address = ""
+  __phone = 0
+  
+  def __init__(self, n, a, p):
+    self.__name = n
+    self.__address = a 
+    self.__phone = p 
+    
+  def printInfo(self):
+    print(self.__name,self.__address,self.__phone)
+    
+class StudentInfo(Info):
+  __major = ""
+  __score = {}
+  
+  def __init__(self, n, a, p, m):
+    super().__init__(n, a, p)
+    self.__major = m
+  
+  def setScore(self, course, __score):
+    self.__score[course] = __score
+    
+  def printInfo(self):
+    super().printInfo()
+    print(self.__major)
+  
+class teacherInfo(Info):
+  salary = 0
+  
+  def __init__(self, n, a, p, s):
+    super().__init__(n, a, p)
+    self.salary = s
+    
+#print (a.__name,  a.__phone, a.__major)
+
+a0 = Info("chouyou","beijing",123213)
+a0.printInfo()
+
+a1 = StudentInfo("chouchou", "london", 5431, "computer")
+a1.printInfo()
 
 
