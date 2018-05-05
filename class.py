@@ -313,4 +313,71 @@ a0.printInfo()
 a1 = StudentInfo("chouchou", "london", 5431, "computer")
 a1.printInfo()
 
+#####################################################################
+# 8. Polymorphism
+#####################################################################
 
+# class(oo programming)的第四个性质：多态性。有继承关系但是是不同类型的objects放在同一个list里，在运行期python会自动去判断同名的member function
+# 三个关键词：run time, dynamic, find a appropriate function
+
+
+
+class Info:
+  __name = ""
+  __address = ""
+  __phone = 0
+  
+  def __init__(self, n, a, p):
+    self.__name = n
+    self.__address = a 
+    self.__phone = p 
+    
+  def printInfo(self):
+    print ("\nprinting information")
+    print(self.__name,self.__address,self.__phone)
+    
+class StudentInfo(Info):
+  __major = ""
+  __score = {}
+  
+  def __init__(self, n, a, p, m):
+    super().__init__(n, a, p)
+    self.__major = m
+  
+  def setScore(self, course, __score):
+    self.__score[course] = __score
+    
+  def printInfo(self):
+    super().printInfo()
+    print(self.__major)
+    print("is a student")
+  
+class teacherInfo(Info):
+  salary = 0
+  
+  def __init__(self, n, a, p, s):
+    super().__init__(n, a, p)
+    self.salary = s
+    
+  def printInfo(self):
+    super().printInfo()
+    print (self.salary)
+    print("is a teacher")
+    
+#print (a.__name,  a.__phone, a.__major)
+
+a0 = Info("chouyou","beijing",123213)
+
+a1 = StudentInfo("chouchou", "london", 5431, "computer")
+
+a2 = teacherInfo("choucong", "6JB", 52153, 9000)
+
+a3 = StudentInfo("xiangcong", "N1", 98623, "finance")
+
+a4 = teacherInfo("xiangyou", "SW1W", 38652, 400000)
+
+a5 = StudentInfo("miaomiao", "9NF", 23895, "quant")
+
+a_list = [a0,a1,a2,a3,a4,a5]
+for x in a_list:
+  x.printInfo()
