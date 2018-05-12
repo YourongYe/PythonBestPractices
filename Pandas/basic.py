@@ -24,7 +24,18 @@ d2 = pd.DataFrame({"Weight":[70,80,90],"Height":[150,160,170],"Age":[20,30,40]},
 print(d2)
 
 #####################################################################
-# 3. Reindex (reindex是暂时性的，如果不存在新的容器里，原来的dataframe不会被改变)
+# 3. Check info of your data
+
+print("data info is "+str(d2.info()))
+print("describe: "+str(d2.describe()))
+
+print("data shape: "+str(d2.shape))
+print(d2.head(2))
+print("data index: "+str(d2.index))
+print("column: "+str(d2.columns))
+
+#####################################################################
+# 4. Reindex (reindex是暂时性的，如果不存在新的容器里，原来的dataframe不会被改变)
 
 
 StudentList = ["Amy","Bob","Candy","Yara"]
