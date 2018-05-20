@@ -20,6 +20,9 @@ print(s4)
 d1 = pd.DataFrame(np.arange(9).reshape((3, 3)),index=["Amy","Candy","Yara"],columns=["Weight","Height","Age"])
 print(d1) # note that there are two "()" for reshape
 
+df = DataFrame(np.random.rand(16).reshape(4,4))
+print(df)
+
 d2 = pd.DataFrame({"Weight":[70,80,90],"Height":[150,160,170],"Age":[20,30,40]},index=["Amy","Candy","Yara"])
 print(d2)
 
