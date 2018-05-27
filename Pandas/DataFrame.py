@@ -60,6 +60,9 @@ df_new.query("duration > 100 & index == 'UK'") # query函数中用来判断条�
 5. 统计：
 # 按某一列的值进行升序排列
 PanelData1.sort_values(by='Inst_num',axis=0)
+# 按列或者行进行累积加和
+data_new = np.cumsum(data,axis=0) # axis=0 按列，axis=1 按行
+data.cumsum(0).plot() # 或者直接print出折线图
 # 分组统计
 group1 = d.groupby('Inst_num')
 group1.size()    #频率统计：这一列的每个值出现了多少次
