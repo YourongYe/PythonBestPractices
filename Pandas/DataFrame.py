@@ -73,9 +73,11 @@ group1.count()  #频率统计：按指定的列升序排列后，其他列的频
 d = d.stack() # 原来的dataframe变为一个多重索引的只有一列对应数值的数据结构，所有的columns都会被作为第二重index来索引，原来的index为第一重索引
 d = d.unstack() # 与上面的变化类似，唯一的不同就是原来的columns会变为第一重索引，而原来的index会变为第二重索引
 #############################################################################################
-7. columns和index互换
+7. 形式转换
 # columns 和 index互换
 data1 = Panel_industry.T
+# transform dictionary to dataframe
+table_list = DataFrame(table_list)
 #############################################################################################
 8. 合并表格
 # 合并表格,axis=0为以行来合并（则两个df的columns要相同），axis=1为以列来合并（两个df的index要相同）
