@@ -78,6 +78,8 @@ d = d.unstack() # 与上面的变化类似，唯一的不同就是原来的colum
 data1 = Panel_industry.T
 # transform dictionary to dataframe
 table_list = DataFrame(table_list)
+# df 变成 array
+df.values
 #############################################################################################
 8. 合并表格
 # 合并表格,axis=0为以行来合并（则两个df的columns要相同），axis=1为以列来合并（两个df的index要相同）
