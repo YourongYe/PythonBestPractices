@@ -85,12 +85,18 @@ result = pd.concat([df1, df2],axis=1)
 # 对于要合并的df中有一个要在新的df中进行复制（比如同一个股票同个时间点对应同一个industry），就用merge
 result = df.merge(stock_price,industry,left_index=True,right_index=True)
 #############################################################################################
-9.存取文件
+9. 存取文件
 #存在新的csv里面
 data.to_csv(dir_path+"/holder_pctbyinst1.csv")
 #读取csv文件
 data = pd.read_csv(path + 'file_name.csv')
 #############################################################################################
-# 找出分位数
+10. 找出分位数
+#只有当a是array的时候才可以用percentile，并且array中不能有str或者nan
 np.percentile(a,95)#95%分位数
-
+#专门给df求分位数的函数，默认是按列来求的
+df.quantile(0.95)
+df.quantile(0.95,axis=1)#按行来求
+#如果想求整个df的分位数
+df_stack = df.stack()
+df_stack.quantile(0.99)
