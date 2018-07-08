@@ -29,6 +29,7 @@ data.set_index('StockNo.')
 d = data.set_index(["StockNo.","Datetime"]) # 设置多重索引
 # 统一datetime格式,如果原来的日期index是‘object’，可以用这个函数把它变为datetime格式
 data['Datetime'] = pd.to_datetime(data['Datetime'])
+data['Date'] = pd.to_datetime(data['Date'], format = '%d/%m/%Y')
 # 提取datetime中的具体年月日
 nvda['year']=nvda.index.year # 再建一列新的column等于对应的年份
 
