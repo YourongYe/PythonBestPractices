@@ -52,3 +52,19 @@ page.render() #将这个page转为html
 
 # 当一个文件里有class的时候，通常在执行main的时候要写这个
 if __name__=='__main__':
+  print(data)
+
+##################################################################################################
+
+3. dataframe 统计各列的参数
+
+def stats(x):
+    return pd.Series([x.count(),x.min(),x.idxmin(),
+    x.quantile(.25),x.median(),
+    x.quantile(.75),x.mean(),
+    x.max(),x.mad(),x.var(),x.std()],
+    index = ['Count','Min','Whicn_Min',
+    'Q1','Median','Q3','Mean',
+    'Max','Which_Max','Var','Std'])
+  
+df.apply(stats)
