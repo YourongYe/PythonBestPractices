@@ -68,3 +68,4 @@ def stats(x):
     'Max','Which_Max','Var','Std'])
   
 df.apply(stats)
+df.corr() # 各列的相关系数表格
