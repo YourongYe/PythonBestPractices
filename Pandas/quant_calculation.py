@@ -44,3 +44,11 @@ overlap.add(kline) #kline是一个图的名字
 # 设置页面的大小，add后面的第一个是某一个图
 grid = Grid(width=1400, height=1100)
 grid.add(line_trend, grid_top="55%",grid_bottom="25%")
+
+# 当页面中有多个图的时候，应该用page（）
+page = Page()
+page.add(grid)
+page.render() #将这个page转为html
+
+# 当一个文件里有class的时候，通常在执行main的时候要写这个
+if __name__=='__main__':
