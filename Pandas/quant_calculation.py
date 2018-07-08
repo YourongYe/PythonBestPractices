@@ -69,3 +69,4 @@ def stats(x):
   
 df.apply(stats)
 df.corr() # 各列的相关系数表格
+df.cov() # df的协方差矩阵
