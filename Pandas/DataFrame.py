@@ -67,6 +67,7 @@ data_new = np.cumsum(data,axis=0) # axis=0 按列，axis=1 按行
 data.cumsum(0).plot() # 或者直接print出折线图
 # 分组统计
 group1 = d.groupby('Inst_num')
+d2 = df.groupby([df['key1'],df['key2']]).mean() #多次分组统计，出来的是一个multiindex的df
 group1.size()    #频率统计：这一列的每个值出现了多少次
 group1.count()  #频率统计：按指定的列升序排列后，其他列的频数统计
 #############################################################################################
