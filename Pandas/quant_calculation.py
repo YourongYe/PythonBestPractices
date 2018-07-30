@@ -8,7 +8,7 @@ center : 布尔型，默认为False, 指取中间的
 how : 取值的方式，默认为None
 
 std = pd.rolling_std(data[1:], window=5)
-sum = pd.rolling_mean(arg, window, min_periods=None, freq=None, center=False, how=None, **kwargs)
+mean = pd.rolling_mean(arg, window, min_periods=None, freq=None, center=False, how=None, **kwargs)
 count = pd.rolling_count(df, window=10, freq=None, center=False, how=None)
 variance = pd.rolling_var(arg, window, min_periods=None, freq=None, center=False, how=None, **kwargs)
 median = pd.rolling_median(arg, window, min_periods=None, freq=None, center=False, how='median', **kwargs)
