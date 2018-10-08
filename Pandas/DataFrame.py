@@ -114,3 +114,8 @@ df_stack.quantile(0.99)
 11. 值替换
 # 用一个df里多个值去替换另一个df里同样位置的值
 d1[d1<0.5] = d2 # 如此，d1中所有小于0.5的数会被d2中同样位置的数覆盖
+d1[d1==np.nan] = 0 #将所有nan替换成0
+# 去极值，将一个df里面所有的值限定一个范围
+alpha[i] = alpha[i].clip(minrange,maxrange) #大于max的就被覆盖为max，小于min的被覆盖为min
+
+
