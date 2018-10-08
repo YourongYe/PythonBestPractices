@@ -47,7 +47,7 @@ df.dropna(axis=1,how='any') # how='all' 表示 删除表中全部为NaN的列
 data_train.fillna(data_train.mean()) 
 
 #############################################################################################
-4. iloc and loc function
+4. iloc and loc ix function
 #截取某几列存入新的容器（-36是倒数第36行，不填就是默认最头或最尾）#[index1:index5, column1:column5]
 holder_pctbyinst2 = holder_pctbyinst1.iloc[1:3, -36:]
 #根据特定位置改变元素的值
@@ -58,7 +58,10 @@ df_new.loc[df_new["duration"]>160] # 根据元素的选取条件来选取对应�
 df_new.loc[((df_new["duration"] > 200) & (df_new["director_facebook_likes"] > 300 )),"flage"] =1 # 根据元素的选取条件来来选取对应的数据集，并在符合条件的数据行添加flage标签 
 df_new.loc[df_new["duration"].isin([100])] # isin函数是series用来判断值是否在目标值是否在series
 df_new.query("duration > 100 & index == 'UK'") # query函数中用来判断条件符合的数据集并返回
-
+# ix 函数 (非常强大，数字和string可以混用，但Python3.7以上就不能用了)
+df.ix[1:4,2:]
+df.ix[1:'stock_pe',:]
+df.ix['stock_name':'stock_pe',:]
 #############################################################################################
 5. 统计：
 # 按某一列的值进行升序排列
@@ -107,3 +110,7 @@ df.quantile(0.95,axis=1)#按行来求
 #如果想求整个df的分位数
 df_stack = df.stack()
 df_stack.quantile(0.99)
+#############################################################################################
+11. 值替换
+# 用一个df里多个值去替换另一个df里同样位置的值
+d1[d1<0.5] = d2 # 如此，d1中所有小于0.5的数会被d2中同样位置的数覆盖
