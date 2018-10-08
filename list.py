@@ -45,3 +45,8 @@ print (b[4]) #print出第五个数字（数第几个的时候是从0开始）
 
 for x in b:
   print (str(x/100)+"%")
+  
+
+# list常用技巧
+
+l1.index(4) # 用值反过来找index
