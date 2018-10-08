@@ -26,6 +26,14 @@ print(df)
 d2 = pd.DataFrame({"Weight":[70,80,90],"Height":[150,160,170],"Age":[20,30,40]},index=["Amy","Candy","Yara"])
 print(d2)
 
+# 生成一个空的df，规定index和columns
+d1 = pd.DataFrame(index=stock_list, columns=time_list) # stock_list & time_list 必须是list，或者是另一个dataframe的index/columns也可
+
+# 以列填充df
+d1['column_name'] = d2 # 此处会根据index自动进行对应，无法对应的地方会生成nan
+d1['column_name'] = l1 # 此处list的长度必须和d1相同，否则会报错
+d1['column_name'] = s1 # 此处也会根据index自动对应，同第一种情况
+
 #####################################################################
 # 3. Check info of your data
 
