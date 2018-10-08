@@ -27,6 +27,8 @@ data = data.rename(columns={"0": "StockNo."})
 # 把某一列作为index，覆盖掉原来的自动索引Rangeindex
 data.set_index('StockNo.')
 d = data.set_index(["StockNo.","Datetime"]) # 设置多重索引
+for x in self.other_factors:
+  x = x.set_index('S_INFO_WINDCODE',inplace=True) # 在for循环中set_index的时候，要加inplace=true
 # 统一datetime格式,如果原来的日期index是‘object’，可以用这个函数把它变为datetime格式
 data['Datetime'] = pd.to_datetime(data['Datetime'])
 data['Date'] = pd.to_datetime(data['Date'], format = '%d/%m/%Y')
