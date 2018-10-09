@@ -102,6 +102,7 @@ data.to_csv(dir_path+"/holder_pctbyinst1.csv")
 #读取csv文件
 data = pd.read_csv(path + 'file_name.csv')
 data = pd.read_csv(path + 'file_name.csv', index_col='stock_name')
+data = pd.read_csv(path + 'file_name.csv', index_col='time', parse_dates=True) # 将第一列作为index并且转化为datetime格式
 #############################################################################################
 10. 找出分位数
 #只有当a是array的时候才可以用percentile，并且array中不能有str或者nan
