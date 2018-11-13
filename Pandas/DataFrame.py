@@ -45,6 +45,8 @@ df.dropna(axis=0,how='any')  # how='all' 表示 删除表中全部为NaN的行
 df.dropna(axis=1,how='any') # how='all' 表示 删除表中全部为NaN的列
 # 将所有行用各自的均值填充 
 data_train.fillna(data_train.mean()) 
+# 用任意值填充所有nan
+data.fillna(0)
 # 判断一个df是否为空（全部为nan不等于为空）
 if df.empty # df.empty是一个bool
 
