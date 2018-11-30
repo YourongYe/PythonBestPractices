@@ -40,6 +40,7 @@ d2 = d1.copy() # 如果直接相等的话，pythond会默认为是引用传递�
 #####################################################################
 # 3. Check info of your data
 
+type(np.ones(5 + 1)[0])
 print("data info is "+str(d2.info()))
 print("describe: "+str(d2.describe()))
 
