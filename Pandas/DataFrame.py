@@ -34,7 +34,8 @@ data['Datetime'] = pd.to_datetime(data['Datetime'])
 data['Date'] = pd.to_datetime(data['Date'], format = '%d/%m/%Y')
 # 提取datetime中的具体年月日
 nvda['year']=nvda.index.year # 再建一列新的column等于对应的年份
-
+# 生成一组时间序列
+index = pd.date_range('2012-04-01','2012-06-01')  # 会生成一个在两个日期范围之间的时间序列df
 #############################################################################################
 3. deal with 'nan' in dataframe
 # 删除缺失值
