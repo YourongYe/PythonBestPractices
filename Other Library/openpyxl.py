@@ -23,3 +23,6 @@ chart.set_categories(dates)
 current_worksheet.add_chart(chart, "I11")
 # 最后一定要save，否则不会改变
 existing_workbook.save(config.opt_des_path + '/alpha%s_results.xlsx'%self.alpha_number)
+
+# 删除一个worksheet
+existing_workbook.remove(current_worksheet)
