@@ -32,6 +32,8 @@ for x in self.other_factors:
 # 统一datetime格式,如果原来的日期index是‘object’，可以用这个函数把它变为datetime格式
 data['Datetime'] = pd.to_datetime(data['Datetime'])
 data['Date'] = pd.to_datetime(data['Date'], format = '%d/%m/%Y')
+# 把Timestamp格式变回string
+date.strftime('%Y%m%d')
 # 提取datetime中的具体年月日
 nvda['year']=nvda.index.year # 再建一列新的column等于对应的年份
 # 生成一组时间序列
