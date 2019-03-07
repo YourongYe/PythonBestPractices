@@ -34,6 +34,9 @@ data['Datetime'] = pd.to_datetime(data['Datetime'])
 data['Date'] = pd.to_datetime(data['Date'], format = '%d/%m/%Y')
 # 把Timestamp格式变回string
 date.strftime('%Y%m%d')
+# 把一列int变成string
+mtrx['X.3'] = mtrx.to_string(columns = ['X.3'])
+或者 mtrx['X.3'] = mtrx['X.3'].astype(str)
 # 提取datetime中的具体年月日
 nvda['year']=nvda.index.year # 再建一列新的column等于对应的年份
 # 生成一组时间序列
