@@ -6,6 +6,7 @@ node = soup.find('div', 'box-etf') #此处会找到<div class="box-etf">这整�
 node = soup.find_all(name='p',attrs={"class":"num"}) #不同的写法
 node = soup.find(text="9000098") #也可以用text来查找，但是必须完全一致才能找到；会直接返回定位到的文字，然后可以用find_parent反查找
 node1 = node.find_parent('div','c-box') #可以找到上段文字的第一个符合要求的父节点
+node1 = node.find_parent(id='coin_fund_list') #也可以用id
 text = parent_node.find_next('p','num').get_text() #下一个最近的符合参数的目标，并拿到text的内容
 float_pnl_list = self.soup.select('p[class="num f-red"]') #select和find的用法类似，但可以多重导向定位；这里寻找的是<p class="num f-red">
 float_pnl_list = self.soup.select('p [class="num f-red"]') #和上面的结果可能完全不同，寻找的是<p>里面的<span class="num f-red">
