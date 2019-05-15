@@ -23,3 +23,9 @@ sleep(2)
 input.send_keys(Keys.ENTER)
 sleep(5)
 driver.quit()
+
+
+#----------------chromedriver install----------------#
+# 1. 下载Chromedriver（mac.zip）一定要和chrome版本对应，否则无法打开
+# 2. 将下载的zip解压，并将chromedriver.exe放在 usr/local/bin 路径下即可 
+# 3. Chrome每次更新都可能需要换新的chromedriver
