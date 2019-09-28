@@ -4,6 +4,7 @@
 # How does a cache work?
 It holds frequently requested data and instructions so that they are immediately available to the CPU when needed. Cache memory is used to reduce the average time to access data from the Main memory. The cache is a smaller and faster memory which stores copies of the data from frequently used main memory locations.
 
+# Example
 ```py
 from functools import lru_cache
 import time
