@@ -1,8 +1,9 @@
 1. check basic info about the dataframe
 #查看每一列的类型
 data.info()
-#查看前三行
+#查看前三行,后三行
 df.head(3)
+df.tail(3)
 #输出行索引  
 print(data.index)
 #输出列索引  
