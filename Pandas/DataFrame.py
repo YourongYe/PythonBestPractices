@@ -99,10 +99,12 @@ table_list = DataFrame(table_list)
 df.values
 #############################################################################################
 8. 合并表格
-# 合并表格,axis=0为以行来合并（则两个df的columns要相同），axis=1为以列来合并（两个df的index要相同）
+# concat可以进行row或者columns的合并,axis=0为以行来合并（则两个df的columns要相同），axis=1为以列来合并（两个df的index要相同）
 result = pd.concat([df1, df2],axis=1)
 # 对于要合并的df中有一个要在新的df中进行复制（比如同一个股票同个时间点对应同一个industry），就用merge
 result = df.merge(stock_price,industry,left_index=True,right_index=True)
+# join和merge更多用于columns的合并，row的合并可以用append,最简单的row的叠加，类似堆积木
+df = df.append(df1) 
 #############################################################################################
 9. 存取文件
 #存在新的csv里面
