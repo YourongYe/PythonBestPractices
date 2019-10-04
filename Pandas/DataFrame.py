@@ -9,6 +9,10 @@ print(data.index)
 print(data.columns)
 #输出DataFrame详细信息  
 print(data.describe())
+#列表的形状
+print(data.shape()) # 返回（长，宽）
+print(data.size()) # 返回长*宽，或者是总共data的数量
+print(len(data)) # 返回长度
 
 #############################################################################################
 2. deal with the columns in dataframe
