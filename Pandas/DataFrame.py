@@ -142,5 +142,7 @@ corr_matrix = corrcoef(data.ix[:,1].values,data.ix[:,0].values)
 corr_matrix[0,1] #出来的结果是一个对角阵
 # 计算任意两列的相关性
 df.corr() # 结果为一个correlation matrix
-
-
+#############################################################################################
+13. Sort
+index = Series.searchsorted(value) # 因为是sorted，所以用的是binary search；直接用pandas找是linear search;   
+# return的是第一个>=value的数的index
