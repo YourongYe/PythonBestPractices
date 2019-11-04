@@ -1,4 +1,4 @@
-# system library
+# Import library
 ```py
 import sys
 import os
