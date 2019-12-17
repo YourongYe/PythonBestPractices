@@ -29,6 +29,8 @@ result = result.reindex(columns=list)
 3. PanelData1.drop('Inst_num',axis=1,inplace=True) # 默认inplace=False，表示原数组不会被替换
 #重命名columns
 data = data.rename(columns={"0": "StockNo."})
+#List unique values in the df['name'] column
+df.name.unique()
 # 把某一列作为index，覆盖掉原来的自动索引Rangeindex
 data.set_index('StockNo.')
 d = data.set_index(["StockNo.","Datetime"]) # 设置多重索引
