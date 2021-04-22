@@ -10,6 +10,14 @@ if self.id == None:
     raise ValueError('id should not be None')
 ```
 # Use try except to raise an exception
+### A simple way of raise whatever exception it is
+```py
+try:
+    response.raise_for_status()
+except:
+    raise
+```
+### if you wanna catch specific exception:
 ```py
 try:
     response.raise_for_status()
