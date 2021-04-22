@@ -26,8 +26,8 @@ except requests.exceptions.HTTPError as error:
     raise AnotherError("this is another error defined by yourself")
 ```
 ### Chaining exception 
-If you want to have both the generic error (built-in exceptions like ValueError) and your custom error (e.g RequestIdFailedError) at the same time,   
-so that people who get the error have more info for debugging
+If you want to have both the generic error (built-in exceptions like ValueError) and your custom error (e.g RequestIdFailedError)   
+at the same time, so that people who get the error have more info for debugging
 
 ```py
 try:
