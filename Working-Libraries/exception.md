@@ -15,7 +15,7 @@ if self.id == None:
 try:
     response.raise_for_status()  # raise_for_status() this function will 
 except:
-    do something else before the exception ...
+    # do something else before the exception ...
     raise
 ```
 ### If you wanna catch specific exception:
