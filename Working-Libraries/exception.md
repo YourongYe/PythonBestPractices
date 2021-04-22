@@ -33,6 +33,6 @@ at the same time, so that people who get the error have more info for debugging
 try:
     response.raise_for_status()
 except requests.exceptions.HTTPError as error:
-    print(error)
-    raise OtherError(str(error)) from error
+    print(error) # this is to print the generic error
+    raise OtherError("cause related to a specific situation") from error
 ```
