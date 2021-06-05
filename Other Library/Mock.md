@@ -112,10 +112,10 @@ class TestCalendar(unittest.TestCase):
     def test_get_holidays_retry(self):
         requests.get.side_effect = [Timeout, ConnectionError]
 
-        with self.assertRaises(Timeout):
+        with self.assertRaises(Timeout): # first time mock function gets called
             get_holidays()
         
-        with self.assertRaises(ConnectionError):
+        with self.assertRaises(ConnectionError):  # second time mock function gets called, they will behave differently
             get_holidays()
 
         assert requests.get.call_count == 2
