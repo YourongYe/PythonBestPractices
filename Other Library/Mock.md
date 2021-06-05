@@ -97,3 +97,29 @@ class TestCalendar(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+- ***.side_effect*** take iterables: it means the mocked function will behave differently, in the order of the iterable
+```py
+requests = Mock()
+
+def get_holidays():
+    r = requests.get("http://fakeurl.com")
+    if r.status_code == 200:
+        return r.json()
+    return None
+
+class TestCalendar(unittest.TestCase):
+
+    def test_get_holidays_retry(self):
+        requests.get.side_effect = [Timeout, ConnectionError]
+
+        with self.assertRaises(Timeout):
+            get_holidays()
+        
+        with self.assertRaises(ConnectionError):
+            get_holidays()
+
+        assert requests.get.call_count == 2
+  
+if __name__ == "__main__":
+    unittest.main()
+```
