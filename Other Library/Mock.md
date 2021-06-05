@@ -26,6 +26,13 @@ today_by_mock = datetime_mock.datetime.today()
 print("Mock Function: ")
 print(f"Today is {today_by_mock}") 
 ```
+Results
+```py
+Real Function:
+Today is 2021-06-05 17:43:05.066949
+Mock Function:
+Today is 2021/06/05
+```
 
 2. Mock an object
 - If the input of our test is an object, and it behaves differently based on the object, in this case, we can mock different object as inputs to test it.  
@@ -51,6 +58,13 @@ person_A_mock.gender = "F"
 
 print("Mock Instance: ")
 print(person_A_mock.name, person_A_mock.age, person_A_mock.gender)
+```
+Results:
+```py
+Real Instance:
+Ana 15 F
+Mock Instance:
+Ana 15 F
 ```
 
 3. Mock an exception
