@@ -72,11 +72,7 @@ def get_holidays():
 class TestCalendar(unittest.TestCase):
 
     def test_get_holidays_retry(self):
-        
-        
-
         requests.get.side_effect = Timeout
-
 
         with self.assertRaises(Timeout):
             get_holidays()
