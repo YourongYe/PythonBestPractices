@@ -6,8 +6,8 @@
 
 ## Basics
 1. Mock a function
-- Note that we use *.return_value* to mock the return value of a function
-- Note that we *don't use .return_value* when we just wanna mock an attribute of an object
+- Note that we use ***.return_value*** to mock the return value of a function
+- Note that we ***don't use .return_value*** when we just wanna mock an attribute of an object
 ```py
 from unittest.mock import Mock
 import datetime
