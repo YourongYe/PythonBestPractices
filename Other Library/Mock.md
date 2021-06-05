@@ -52,3 +52,7 @@ person_A_mock.gender = "F"
 print("Mock Instance: ")
 print(person_A_mock.name, person_A_mock.age, person_A_mock.gender)
 ```
+
+3. Mock an exception
+- We use ***.side_effect*** to mock exception, but it can also be used to redirect to another function
+
