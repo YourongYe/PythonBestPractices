@@ -45,7 +45,7 @@ print(person_A.name, person_A.age, person_A.gender)
 
 # Mock the instance
 person_A_mock = Mock()
-person_A_mock.name = "Ana"
+person_A_mock.name = "Ana"  # here we don't use .return_value cus its not a function, name is just an attribute
 person_A_mock.age = 15
 person_A_mock.gender = "F"
 
