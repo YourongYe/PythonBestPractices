@@ -26,6 +26,8 @@ print(f"Today is {today_by_mock}")
 ```
 
 2. Mock an object
+- If the input of our test is an object, and it behaves differently based on the object, in this case, we can mock different object as inputs to test it.  
+- If a function within our test returns an object, which will affect how the rest of the test behaves, then we need to mock the returned obj based on different scenarios.  
 ```py
 class Person:
 
