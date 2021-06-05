@@ -141,7 +141,7 @@ def get_holidays():
     return None
 
 class TestCalendar(unittest.TestCase):
-    def log_request(self, url):
+    def log_request(self, url):  # here we define the function we want to redirect to, note the argument should be same type as the function being mocked
         print(f"connected to {url}")
 
         response_mock = Mock()
