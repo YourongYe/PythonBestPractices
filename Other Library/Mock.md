@@ -154,7 +154,7 @@ class TestCalendar(unittest.TestCase):
         return response_mock
 
     def test_get_holidays_retry(self):
-        requests.get.side_effect = self.log_request
+        requests.get.side_effect = self.log_request  # here we mock request.get and redirect it to another function
         
         r = get_holidays()
         assert r['12/25'] == "Christmas"
