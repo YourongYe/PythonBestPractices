@@ -69,6 +69,7 @@ Ana 15 F
 
 3. Mock an exception
 - We use ***.side_effect*** to mock exception, but it can also be used to redirect to another function
+- ***.side_effect*** can be set to be a class, function or iterable
 ```py
 import requests
 from requests.exceptions import Timeout
@@ -86,7 +87,7 @@ def get_holidays():
 class TestCalendar(unittest.TestCase):
 
     def test_get_holidays_retry(self):
-        requests.get.side_effect = Timeout
+        requests.get.side_effect = Timeout  # here Timeout is a class
 
         with self.assertRaises(Timeout):
             get_holidays()
