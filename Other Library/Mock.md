@@ -55,4 +55,34 @@ print(person_A_mock.name, person_A_mock.age, person_A_mock.gender)
 
 3. Mock an exception
 - We use ***.side_effect*** to mock exception, but it can also be used to redirect to another function
+```py
+import requests
+from requests.exceptions import Timeout
+from unittest.mock import Mock
+import unittest
 
+requests = Mock()
+
+def get_holidays():
+    r = requests.get("http://fakeurl.com")
+    if r.status_code == 200:
+        return r.json()
+    return None
+
+class TestCalendar(unittest.TestCase):
+
+    def test_get_holidays_retry(self):
+        
+        
+
+        requests.get.side_effect = Timeout
+
+
+        with self.assertRaises(Timeout):
+            get_holidays()
+
+        assert requests.get.call_count == 1
+  
+if __name__ == "__main__":
+    unittest.main()
+```
