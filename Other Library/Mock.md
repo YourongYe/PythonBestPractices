@@ -313,3 +313,35 @@ class TestCalendar(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+3. Using with patch statement
+```py
+from main import get_holidays
+from unittest.mock import patch # 如果get_holidays在另一个py文件里，则test文件可以不用import requests
+from requests.exceptions import Timeout, ConnectionError
+from unittest.mock import Mock
+import unittest
+
+class TestCalendar(unittest.TestCase):
+
+    def test_get_holidays_1(self):
+        with patch("main.requests") as mock_requests:
+            mock_requests.get.side_effect = Timeout
+            print("test_get_holidays_1: ")
+            print("In test scope: ", mock_requests)
+
+            with self.assertRaises(Timeout):
+                get_holidays()
+
+    def test_get_holidays_2(self):
+        with patch("main.requests") as mock_requests:
+            mock_requests.get.side_effect = ConnectionError
+            print("test_get_holidays_2: ")
+            print("In test scope: ", mock_requests)
+
+            with self.assertRaises(ConnectionError):
+                get_holidays()
+
+  
+if __name__ == "__main__":
+    unittest.main()
+```
