@@ -239,3 +239,45 @@ In test scope:  <Mock id='1922625937928'>
 In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\Python\\Python37\\site-packages\\requests\\__init__.py'>
 In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\Python\\Python37\\site-packages\\requests\\__init__.py'>
 ```
+### Good Example: control the scope you wanna impact
+1. Using Patch decorator
+```py
+import main
+from unittest.mock import patch # 如果get_holidays在另一个py文件里，则test文件可以不用import requests
+from requests.exceptions import Timeout, ConnectionError
+from unittest.mock import Mock
+import unittest
+
+class TestCalendar(unittest.TestCase):
+
+    @patch("main.requests")
+    def test_get_holidays_1(self, mock_requests):
+        mock_requests.get.side_effect = Timeout
+        print("test_get_holidays_1: ")
+        print("In test scope: ", mock_requests)
+
+        with self.assertRaises(Timeout):
+            main.get_holidays()
+
+    @patch("main.requests")
+    def test_get_holidays_2(self, mock_requests):
+        mock_requests.get.side_effect = ConnectionError
+        print("test_get_holidays_2: ")
+        print("In test scope: ", mock_requests)
+
+        with self.assertRaises(ConnectionError):
+            main.get_holidays()
+
+  
+if __name__ == "__main__":
+    unittest.main()
+```
+Results:
+```py
+test_get_holidays_1:
+In test scope:  <MagicMock name='requests' id='2229835241224'>
+In function scope:  <MagicMock name='requests' id='2229835241224'>
+.test_get_holidays_2:
+In test scope:  <MagicMock name='requests' id='2229835278920'>
+In function scope:  <MagicMock name='requests' id='2229835278920'>
+```
