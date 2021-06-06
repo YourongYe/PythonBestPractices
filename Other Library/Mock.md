@@ -376,3 +376,14 @@ Result:
 ```py
 <MagicMock name='get_holidays()' id='2927673293576'>
 ```
+### Example 3
+```py
+from main import get_holidays
+
+with patch("main.get_holidays"):
+    print(get_holidays)
+```
+Result: 
+```py
+<function get_holidays at 0x00000251AA088D38>
+```
