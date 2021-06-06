@@ -216,7 +216,7 @@ def get_holidays():
 class TestCalendar(unittest.TestCase):
 
     def test_get_holidays_1(self):
-        # requests = Mock()
+        requests = Mock()
         requests.get.side_effect = [Timeout, ConnectionError]
         print("In test scope: ", requests)
 
@@ -231,7 +231,6 @@ class TestCalendar(unittest.TestCase):
   
 if __name__ == "__main__":
     unittest.main()
-  
 ```
 Results:
 ```py
