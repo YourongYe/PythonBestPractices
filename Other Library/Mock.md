@@ -222,7 +222,7 @@ class TestCalendar(unittest.TestCase):
         print("In test scope: ", requests)
 
         with self.assertRaises(Timeout):
-            get_holidays()
+            get_holidays() # 出了这个function，requests mock就不再有效了
 
     def test_get_holidays_2(self):
         with self.assertRaises(ConnectionError):
