@@ -20,7 +20,7 @@ print(f"Today is {today}")
 # mock the library and then define the return value of the function you wanna mock
 datetime_mock = Mock()
 
-datetime_mock.datetime.today.return_value = "2021/06/05"
+datetime_mock.datetime.today.return_value = "2021/06/05" # 如果把datetime_mock换成datetime，就可以替换掉datetime这个library，让它按照我们自己的test设计来return任何值
 today_by_mock = datetime_mock.datetime.today()
 
 print("Mock Function: ")
