@@ -345,3 +345,21 @@ class TestCalendar(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+ ## Where to Patch (choose the right path)
+ 
+ #### Example 1
+ ```py
+ from requests.exceptions import Timeout
+from unittest.mock import Mock
+from unittest.mock import patch
+import main
+
+with patch("main.get_holidays"):
+    r = main.get_holidays()
+    print(r)
+ ```
+ 
+ Result:
+ ```py
+ <MagicMock name='get_holidays()' id='2231111138120'>
+ ```
