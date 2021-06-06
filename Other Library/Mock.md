@@ -5,7 +5,7 @@
 
 
 ## Basics
-###1. Mock a function
+### 1. Mock a function
 - Note that we use ***.return_value*** to mock the return value of a function
 - Note that we ***don't use .return_value*** when we just wanna mock an attribute of an object
 ```py
@@ -34,7 +34,7 @@ Mock Function:
 Today is 2021/06/05
 ```
 
-###2. Mock an object
+### 2. Mock an object
 - If the input of our test is an object, and it behaves differently based on the object, in this case, we can mock different object as inputs to test it.  
 - If a function within our test returns an object, which will affect how the rest of the test behaves, then we need to mock the returned obj based on different scenarios.  
 ```py
@@ -67,7 +67,7 @@ Mock Instance:
 Ana 15 F
 ```
 
-###3. Mock an exception
+### 3. Mock an exception
 - We use ***.side_effect*** to mock exception, but it can also be used to redirect to another function
 - ***.side_effect*** can be set to be a class, function or iterable
 ```py
