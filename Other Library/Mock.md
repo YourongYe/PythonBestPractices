@@ -242,7 +242,7 @@ In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\P
 ### Good Example: control the scope you wanna impact
 1. Using Patch decorator
 ```py
-import main
+import main  # <---------------------
 from unittest.mock import patch # 如果get_holidays在另一个py文件里，则test文件可以不用import requests
 from requests.exceptions import Timeout, ConnectionError
 from unittest.mock import Mock
@@ -257,7 +257,7 @@ class TestCalendar(unittest.TestCase):
         print("In test scope: ", mock_requests)
 
         with self.assertRaises(Timeout):
-            main.get_holidays()
+            main.get_holidays()   # <---------------------
 
     @patch("main.requests")
     def test_get_holidays_2(self, mock_requests):
@@ -266,7 +266,7 @@ class TestCalendar(unittest.TestCase):
         print("In test scope: ", mock_requests)
 
         with self.assertRaises(ConnectionError):
-            main.get_holidays()
+            main.get_holidays()   # <---------------------
 
   
 if __name__ == "__main__":
