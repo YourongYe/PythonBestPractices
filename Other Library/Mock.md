@@ -347,7 +347,7 @@ if __name__ == "__main__":
 ```
  ## Where to Patch (choose the right path)
  
- #### Example 1
+ ### Example 1
  ```py
  from requests.exceptions import Timeout
 from unittest.mock import Mock
@@ -363,3 +363,16 @@ with patch("main.get_holidays"):
  ```py
  <MagicMock name='get_holidays()' id='2231111138120'>
  ```
+### Example 2
+```py
+from main import get_holidays
+
+with patch("__main__.get_holidays"):  # when patching a function, you must specify the scope
+    r = get_holidays()
+    print(r)
+
+```
+Result:
+```py
+<MagicMock name='get_holidays()' id='2927673293576'>
+```
