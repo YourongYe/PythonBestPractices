@@ -164,3 +164,36 @@ class TestCalendar(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+## Scope of Mock
+1. Local scope
+```py
+import requests # 如果get_holidays在另一个py文件里，则test文件可以不用import requests
+from requests.exceptions import Timeout, ConnectionError
+from unittest.mock import Mock
+import unittest
+
+requests = Mock() # 这一行不能写在test里，否则会报错
+
+def get_holidays():
+    r = requests.get("http://fakeurl.com")
+    if r.status_code == 200:
+        return r.json()
+    return None
+
+class TestCalendar(unittest.TestCase):
+
+    def test_get_holidays_1(self):
+        requests.get.side_effect = [Timeout, ConnectionError]
+
+        with self.assertRaises(Timeout):
+            get_holidays()
+
+    def test_get_holidays_2(self):
+        with self.assertRaises(ConnectionError):
+            get_holidays()
+
+        assert requests.get.call_count == 2
+  
+if __name__ == "__main__":
+    unittest.main()
+```
