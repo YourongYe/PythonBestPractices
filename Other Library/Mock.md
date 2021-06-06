@@ -240,7 +240,7 @@ In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\P
 In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\Python\\Python37\\site-packages\\requests\\__init__.py'>
 ```
 ### Good Example: control the scope you wanna impact
-*** Now we move get_holidays() to a separate file called main.py ***
+***Now we move get_holidays() to a separate file called main.py***
 1. Using Patch decorator (1)
 ```py
 import main  # <---------------------
