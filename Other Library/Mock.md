@@ -165,8 +165,8 @@ if __name__ == "__main__":
     unittest.main()
 ```
 ## Scope of Mock
-1. Local scope
-Good Example: mock the library outside the test function
+1. Local scope  
+### Bad Example 1: mock the library outside the test function (without specifying the affected scope, meaning that all functions in this scope will be affected)
 ```py
 requests = Mock()
 
@@ -203,7 +203,7 @@ In function scope:  <Mock id='1606455477640'>
 .In function scope:  <Mock id='1606455477640'>
 ```
 
-### Bad Example: mock the library inside the function
+### Bad Example 2: mock the library inside the function
 ```py
 # requests = Mock() # 这一行不能写在test里，否则会报错
 
