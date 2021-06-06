@@ -240,10 +240,11 @@ In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\P
 In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\Python\\Python37\\site-packages\\requests\\__init__.py'>
 ```
 ### Good Example: control the scope you wanna impact
+*** Now we move get_holidays() to a separate file called main.py ***
 1. Using Patch decorator (1)
 ```py
 import main  # <---------------------
-from unittest.mock import patch # 如果get_holidays在另一个py文件里，则test文件可以不用import requests
+from unittest.mock import patch # 如果 get_holidays 在另一个py文件里，则test文件可以不用import requests
 from requests.exceptions import Timeout, ConnectionError
 from unittest.mock import Mock
 import unittest
