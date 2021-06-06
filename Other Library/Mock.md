@@ -187,7 +187,7 @@ class TestCalendar(unittest.TestCase):
         with self.assertRaises(Timeout):
             get_holidays()
 
-    def test_get_holidays_2(self):
+    def test_get_holidays_2(self): #因为mock obj被定义在global，所以即使这个test function内部没有定义get，也还是在影响范围内
         with self.assertRaises(ConnectionError):
             get_holidays()
 
