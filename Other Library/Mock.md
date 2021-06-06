@@ -166,6 +166,7 @@ if __name__ == "__main__":
 ```
 ## Scope of Mock
 1. Local scope
+Good Example: mock the library outside the test function
 ```py
 requests = Mock()
 
@@ -202,7 +203,7 @@ In function scope:  <Mock id='1606455477640'>
 .In function scope:  <Mock id='1606455477640'>
 ```
 
-### Bad Example
+### Bad Example: mock the library inside the function
 ```py
 # requests = Mock() # 这一行不能写在test里，否则会报错
 
@@ -216,7 +217,7 @@ def get_holidays():
 class TestCalendar(unittest.TestCase):
 
     def test_get_holidays_1(self):
-        requests = Mock()
+        requests = Mock()  # mock object only exists in local scope
         requests.get.side_effect = [Timeout, ConnectionError]
         print("In test scope: ", requests)
 
