@@ -291,7 +291,7 @@ import unittest
 
 class TestCalendar(unittest.TestCase):
 
-    @patch("main.requests")
+    @patch("main.requests") # here is not affected by how we import the function or library
     def test_get_holidays_1(self, mock_requests):
         mock_requests.get.side_effect = Timeout
         print("test_get_holidays_1: ")
