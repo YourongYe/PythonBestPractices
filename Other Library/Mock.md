@@ -378,10 +378,10 @@ Result:
 ```
 ### Example 3
 ```py
-from main import get_holidays
+from main import get_holidays  # here we add __main__.get_holidays
 
-with patch("main.get_holidays"):
-    print(get_holidays)
+with patch("main.get_holidays"):  # here we patch main.get_holidays
+    print(get_holidays) # here we call __main__.get_holidays, which is not patched
 ```
 Result: 
 ```py
