@@ -167,14 +167,10 @@ if __name__ == "__main__":
 ## Scope of Mock
 1. Local scope
 ```py
-import requests # 如果get_holidays在另一个py文件里，则test文件可以不用import requests
-from requests.exceptions import Timeout, ConnectionError
-from unittest.mock import Mock
-import unittest
-
-requests = Mock() # 这一行不能写在test里，否则会报错
+requests = Mock()
 
 def get_holidays():
+    print("In function scope: ", requests)
     r = requests.get("http://fakeurl.com")
     if r.status_code == 200:
         return r.json()
@@ -183,7 +179,9 @@ def get_holidays():
 class TestCalendar(unittest.TestCase):
 
     def test_get_holidays_1(self):
+        # requests = Mock()
         requests.get.side_effect = [Timeout, ConnectionError]
+        print("In test scope: ", requests)
 
         with self.assertRaises(Timeout):
             get_holidays()
@@ -196,4 +194,48 @@ class TestCalendar(unittest.TestCase):
   
 if __name__ == "__main__":
     unittest.main()
+```
+Results:
+```py
+In test scope:  <Mock id='1606455477640'>
+In function scope:  <Mock id='1606455477640'>
+.In function scope:  <Mock id='1606455477640'>
+```
+
+### Bad Example
+```py
+# requests = Mock() # 这一行不能写在test里，否则会报错
+
+def get_holidays():
+    print("In function scope: ", requests)
+    r = requests.get("http://fakeurl.com")
+    if r.status_code == 200:
+        return r.json()
+    return None
+
+class TestCalendar(unittest.TestCase):
+
+    def test_get_holidays_1(self):
+        # requests = Mock()
+        requests.get.side_effect = [Timeout, ConnectionError]
+        print("In test scope: ", requests)
+
+        with self.assertRaises(Timeout):
+            get_holidays()
+
+    def test_get_holidays_2(self):
+        with self.assertRaises(ConnectionError):
+            get_holidays()
+
+        assert requests.get.call_count == 2
+  
+if __name__ == "__main__":
+    unittest.main()
+  
+```
+Results:
+```py
+In test scope:  <Mock id='1922625937928'>
+In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\Python\\Python37\\site-packages\\requests\\__init__.py'>
+In function scope:  <module 'requests' from 'C:\\Users\\yye\\AppData\\Roaming\\Python\\Python37\\site-packages\\requests\\__init__.py'>
 ```
